@@ -1381,7 +1381,7 @@ BO_ 1493 ID5D5RearDItemps: 5 VehicleBus
  SG_ DI_pcbTemp2 : 24|8@1+ (1,-40) [-40|150] "C"  Receiver
  SG_ DI_IGBTJunctTemp : 32|8@1+ (1,-40) [-40|200] "C"  Receiver
 
-BO_ 1366 ID556FrontDItemps: 5 VehicleBus
+BO_ 1366 ID556FrontDItemps: 7 VehicleBus
  SG_ DIF_ph1Temp : 0|8@1+ (1,-40) [-40|120] "C"  Receiver
  SG_ DIF_ph2Temp : 8|8@1+ (1,-40) [-40|120] "C"  Receiver
  SG_ DIF_ph3Temp : 16|8@1+ (1,-40) [-40|120] "C"  Receiver
@@ -2194,8 +2194,8 @@ BO_ 917 ID395DIR_oilPump: 8 VehicleBus
 BO_ 472 ID1D8RearTorque: 8 VehicleBus
  SG_ Checksum1D8 : 56|8@1+ (1,0) [0|255] ""  Receiver
  SG_ Counter1D8 : 53|3@1+ (1,0) [0|7] ""  Receiver
- SG_ RearTorqueRequest1D8 : 8|15@1- (0.1,0) [-1638.4|1638.3] "NM"  Receiver
- SG_ RearTorque1D8 : 24|13@1- (0.25,0) [-1024|1023.75] "NM"  Receiver
+ SG_ RearTorqueRequest1D8 : 8|13@1- (0.222,0) [-909.312|909.09] "NM"  Receiver
+ SG_ RearTorque1D8 : 21|13@1- (0.222,0) [-909.312|909.09] "NM"  Receiver
  SG_ TorqueFlags1D8 : 0|8@1+ (1,0) [0|255] ""  Receiver
 
 BO_ 341 ID155WheelAngles: 8 ChassisBus
@@ -2234,8 +2234,8 @@ BO_ 468 ID1D4FrontTorqueOld: 8 VehicleBus
  SG_ RAWTorqueFront1D4 : 40|12@1- (0.25,0) [-512|511.75] "NM"  Receiver
 
 BO_ 469 ID1D5FrontTorque: 8 VehicleBus
- SG_ FrontTorqueRequest1D5 : 8|15@1- (0.1,0) [-1638.4|1638.3] "NM"  Receiver
- SG_ FrontTorque1D5 : 24|13@1- (0.25,0) [-1024|1023.75] "NM"  Receiver
+ SG_ FrontTorqueRequest1D5 : 8|13@1- (0.222,0) [-909.312|909.09] "NM"  Receiver
+ SG_ FrontTorque1D5 : 21|13@1- (0.222,0) [-909.312|909.09] "NM"  Receiver
 
 BO_ 641 ID281VCFRONT_CMPRequest: 8 VehicleBus
  SG_ VCFRONT_CMPTargetDuty : 0|16@1+ (0.1,0) [0|100] "%"  Receiver
@@ -2506,13 +2506,35 @@ BO_ 984 ID3D8Elevation: 2 VehicleBus
  SG_ Elevation3D8 : 0|14@1- (1,0) [-8192|8191] "M"  Receiver
 
 BO_ 609 ID261_12vBattStatus: 8 VehicleBus
- SG_ v12vBattTemp261 : 16|16@1- (0.01,0) [-327.68|327.66] "C"  Receiver
- SG_ v12vBattAH261 : 32|14@1- (0.005,0) [-40.96|40.955] "AH"  Receiver
- SG_ v12vBattCurrent261 : 48|16@1- (0.005,0) [-163.84|163.835] "A"  Receiver
- SG_ v12vBattVoltage261 : 0|12@1+ (0.00544368,0) [0|22.2919] "V"  Receiver
- SG_ VCFRONT_LVLoadRequest : 47|1@1+ (1,0) [0|1] ""  Receiver
- SG_ VCFRONT_good12VforUpdate : 46|1@1+ (1,0) [0|1] ""  Receiver
- SG_ VCFRONT_is12VBatterySupported : 12|1@1+ (1,0) [0|1] ""  Receiver
+ SG_ VCFRONT_12VBatteryStatusChecksum : 56|8@1+ (1,0) [0|0] ""  Receiver
+ SG_ VCFRONT_12VBatteryStatusCounter : 52|4@1+ (1,0) [0|0] ""  Receiver
+ SG_ VCFRONT_LVBatteryDisconnected m1 : 50|1@1+ (1,0) [0|0] ""  Receiver
+ SG_ VCFRONT_LVBatterySupported m1 : 49|1@1+ (1,0) [0|0] ""  Receiver
+ SG_ VCFRONT_voltageFloorReachedCount m0 : 48|4@1+ (1,0) [0|0] ""  Receiver
+ SG_ VCFRONT_reverseBatteryFault m1 : 48|1@1+ (1,0) [0|0] ""  Receiver
+ SG_ VCFRONT_LVLoadRequest : 47|1@1+ (1,0) [0|0] ""  Receiver
+ SG_ VCFRONT_good12VforUpdate : 46|1@1+ (1,0) [0|0] ""  Receiver
+ SG_ VCFRONT_firstChargePOR m0 : 45|1@1+ (1,0) [0|0] ""  Receiver
+ SG_ VCFRONT_chargeNeeded m1 : 45|1@1+ (1,0) [0|0] ""  Receiver
+ SG_ VCFRONT_firstChargeOTA m0 : 44|1@1+ (1,0) [0|0] ""  Receiver
+ SG_ VCFRONT_PCSMia m1 : 44|1@1+ (1,0) [0|0] ""  Receiver
+ SG_ VCFRONT_silentWakeIBSCurrent m0 : 32|12@1- (0.1,-204.7) [-409.5|2.8421709430404E-014] "mA"  Receiver
+ SG_ v12vBattVoltage261 m1 : 32|12@1+ (0.00544368,0) [0|22.2918696] "V"  Receiver
+ SG_ VCFRONT_12VBatteryTargetVoltage m2 : 32|10@1+ (0.01,9) [9|19.23] "V"  Receiver
+ SG_ v12vBattCurrent261 m0 : 16|16@1- (0.005,0) [-163.84|163.835] "A"  Receiver
+ SG_ VCFRONT_IBSCurrent m1 : 16|16@1- (0.005,0) [-163.84|163.835] "A"  Receiver
+ SG_ v12vBattTemp261 m2 : 16|16@1- (0.01,0) [-327.68|327.67] "C"  Receiver
+ SG_ VCFRONT_shortedCellFaultCounter m0 : 13|3@1+ (1,0) [0|0] ""  Receiver
+ SG_ VCFRONT_isVehicleSupported m0 : 12|1@1+ (1,0) [0|0] ""  Receiver
+ SG_ VCFRONT_targetCurrent m1 : 8|8@1+ (0.125,0) [0|31.875] "A"  Receiver
+ SG_ VCFRONT_voltageDropCounter m0 : 8|4@1+ (1,0) [0|0] ""  Receiver
+ SG_ VCFRONT_batterySMState m1 : 4|4@1+ (1,0) [0|0] ""  Receiver
+ SG_ VCFRONT_12VOverchargeCounter m0 : 4|4@1+ (1,0) [0|0] ""  Receiver
+ SG_ VCFRONT_batterySupportRequest m1 : 3|1@1+ (1,0) [0|0] ""  Receiver
+ SG_ v12vBattAH261 m2 : 2|14@1- (0.005,0) [-40.96|40.955] "Ah"  Receiver
+ SG_ VCFRONT_voltageProfile m0 : 2|2@1+ (1,0) [0|0] ""  Receiver
+ SG_ VCFRONT_IBSFault m1 : 2|1@1+ (1,0) [0|0] ""  Receiver
+ SG_ VCFRONT_12VBatteryStatusIndex M : 0|2@1+ (1,0) [0|0] ""  Receiver
 
 BO_ 297 ID129SteeringAngle: 8 VehicleBus
  SG_ SteeringSensorC129 : 56|8@1+ (1,0) [0|255] ""  Receiver
@@ -3135,6 +3157,9 @@ CM_ SG_ 472 RearTorque1D8 "Rear Motor Torque";
 CM_ SG_ 468 RAWTorqueFront1D4 "Front Torque Old, Axle torque 2 with 9/1 gearing";
 CM_ SG_ 469 FrontTorqueRequest1D5 "Front Motor Torque Request";
 CM_ SG_ 469 FrontTorque1D5 "Front Motor Torque";
+CM_ SG_ 741 FrontPower2E5 "Front Motor Power";
+CM_ SG_ 741 FrontPowerLimit2E5 "Front Power Limit, approx offset Orig scale 1";
+CM_ SG_ 741 FrontHeatPower2E5 "Front Waste Heat Power";
 CM_ SG_ 822 DriveRegenRating336 "Regen Rating";
 CM_ SG_ 822 DrivePowerRating336 "Power Rating";
 CM_ SG_ 616 SystemRegenPowerMax268 "Max Regen Power";
@@ -3159,10 +3184,10 @@ CM_ SG_ 801 VCFRONT_tempAmbientFiltered "Outside Temperature";
 CM_ SG_ 801 VCFRONT_tempCoolantBatInlet "Battery Coolant Temp";
 CM_ SG_ 801 VCFRONT_tempCoolantPTInlet "Powertrain Coolant Temp";
 CM_ SG_ 984 Elevation3D8 "Elevation";
+CM_ SG_ 609 v12vBattVoltage261 "12V Battery Voltage";
+CM_ SG_ 609 v12vBattCurrent261 "12V Battery Current";
 CM_ SG_ 609 v12vBattTemp261 "12V Battery Temp";
 CM_ SG_ 609 v12vBattAH261 "12V Battery Capacity";
-CM_ SG_ 609 v12vBattCurrent261 "12V Battery Current";
-CM_ SG_ 609 v12vBattVoltage261 "12V Battery Voltage";
 CM_ SG_ 297 SteeringSpeed129 "Steering Speed";
 CM_ SG_ 297 SteeringAngle129 "Steering Angle";
 CM_ SG_ 612 ChargeLinePower264 "Charger Line Power";
@@ -3279,7 +3304,7 @@ BA_DEF_DEF_  "GenNodAutoGenDsp" "";
 BA_DEF_DEF_  "GenEnvVarEndingDsp" "";
 BA_DEF_DEF_  "GenEnvVarEndingSnd" "";
 BA_DEF_DEF_  "GenEnvVarPrefix" "";
-BA_DEF_DEF_  "Modified" "JW2021Jul24";
+BA_DEF_DEF_  "Modified" "JW2021Aug29";
 BA_DEF_DEF_  "GenMsgBackgroundColor" "";
 BA_DEF_DEF_  "GenMsgForegroundColor" "";
 BA_DEF_DEF_  "matchingcriteria" 0;
@@ -3450,6 +3475,8 @@ VAL_ 562 BMS_fcContactorRequest 1 "SET_REQUEST_CLOSE" 4 "SET_REQUEST_CLOSE_NEGAT
 VAL_ 562 BMS_fcLinkOkToEnergizeRequest 1 "FC_LINK_ENERGY_AC" 2 "FC_LINK_ENERGY_DC" 0 "FC_LINK_ENERGY_NONE" ;
 VAL_ 562 BMS_internalHvilSenseV 65535 "SNA" ;
 VAL_ 562 BMS_packContactorRequest 1 "SET_REQUEST_CLOSE" 4 "SET_REQUEST_CLOSE_NEGATIVE_ONLY" 5 "SET_REQUEST_CLOSE_POSITIVE_ONLY" 2 "SET_REQUEST_OPEN" 3 "SET_REQUEST_OPEN_IMMEDIATELY" 0 "SET_REQUEST_SNA" ;
+VAL_ 609 VCFRONT_batterySMState 0 "INIT" 1 "CHARGE" 2 "DISCHARGE" 3 "STANDBY" 4 "RESISTANCE_ESTIMATION" 5 "OTA_STANDBY" 6 "DISCONNECTED_BATTERY_TEST" 7 "SHORTED_CELL_TEST" 8 "FAULT" 9 "RECOVERY" ;
+VAL_ 609 VCFRONT_voltageProfile 0 "CHARGE" 1 "FLOAT" 2 "REDUCED_FLOAT" 3 "ALWAYS_CLOSED_CONTACTORS" ;
 VAL_ 627 UI_displayBrightnessLevel 255 "SNA" ;
 VAL_ 627 UI_domeLightSwitch 2 "DOME_LIGHT_SWITCH_AUTO" 0 "DOME_LIGHT_SWITCH_OFF" 1 "DOME_LIGHT_SWITCH_ON" ;
 VAL_ 627 UI_driveStateRequest 0 "DRIVE_STATE_REQ_IDLE" 1 "DRIVE_STATE_REQ_START" ;
@@ -4168,8 +4195,8 @@ VAL_ 850 BMS_expectedEnergyRemaining 2047 "SNA" ;
 VAL_ 850 BMS_idealEnergyRemaining 2047 "SNA" ;
 VAL_ 850 BMS_nominalEnergyRemaining 2047 "SNA" ;
 VAL_ 850 BMS_nominalFullPackEnergy 2047 "SNA" ;
-VAL_ 914 BMS_packConfigMultiplexer 0 "Mux0" 1 "Mux1" ;
 VAL_ 914 BMS_moduleType 0 "UNKNOWN" 1 "E3_NCT" 2 "E1_NCT" 3 "E3_CT" 4 "E1_CT" 5 "E1_CP" ;
+VAL_ 914 BMS_packConfigMultiplexer 0 "Mux0" 1 "Mux1" ;
 VAL_ 914 BMS_reservedConfig_0 0 "BMS_CONFIG_0" 1 "BMS_CONFIG_1" 10 "BMS_CONFIG_10" 11 "BMS_CONFIG_11" 12 "BMS_CONFIG_12" 13 "BMS_CONFIG_13" 14 "BMS_CONFIG_14" 15 "BMS_CONFIG_15" 16 "BMS_CONFIG_16" 17 "BMS_CONFIG_17" 18 "BMS_CONFIG_18" 19 "BMS_CONFIG_19" 2 "BMS_CONFIG_2" 20 "BMS_CONFIG_20" 21 "BMS_CONFIG_21" 22 "BMS_CONFIG_22" 23 "BMS_CONFIG_23" 24 "BMS_CONFIG_24" 25 "BMS_CONFIG_25" 26 "BMS_CONFIG_26" 27 "BMS_CONFIG_27" 28 "BMS_CONFIG_28" 29 "BMS_CONFIG_29" 3 "BMS_CONFIG_3" 30 "BMS_CONFIG_30" 31 "BMS_CONFIG_31" 4 "BMS_CONFIG_4" 5 "BMS_CONFIG_5" 6 "BMS_CONFIG_6" 7 "BMS_CONFIG_7" 8 "BMS_CONFIG_8" 9 "BMS_CONFIG_9" ;
 VAL_ 594 BMS_powerLimitsState 1 "POWER_CALCULATED_FOR_DRIVE" 0 "POWER_NOT_CALCULATED_FOR_DRIVE" ;
 VAL_ 658 BattBeginningOfLifeEnergy292 1023 "SNA" ;

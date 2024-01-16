@@ -2603,13 +2603,14 @@ BO_ 280 ID118DriveSystemStatus: 8 VehicleBus
  SG_ DI_tractionControlMode : 40|3@1+ (1,0) [0|6] ""  Receiver
 
 BO_ 850 ID352BMS_energyStatus: 8 VehicleBus
- SG_ BMS_energyBuffer : 55|8@1+ (0.1,0) [0|25.4] "KWh"  Receiver
- SG_ BMS_energyToChargeComplete : 44|11@1+ (0.1,0) [0|204.6] "KWh"  Receiver
- SG_ BMS_expectedEnergyRemaining : 22|11@1+ (0.1,0) [0|204.6] "KWh"  Receiver
- SG_ BMS_fullChargeComplete : 63|1@1+ (1,0) [0|1] ""  Receiver
- SG_ BMS_idealEnergyRemaining : 33|11@1+ (0.1,0) [0|204.6] "KWh"  Receiver
- SG_ BMS_nominalEnergyRemaining : 11|11@1+ (0.1,0) [0|204.6] "KWh"  Receiver
- SG_ BMS_nominalFullPackEnergy : 0|11@1+ (0.1,0) [0|204.6] "KWh"  Receiver
+ SG_ BMS_energyStatusMultiplexer M : 0|2@1+ (1,0) [0|3] "" Receiver
+ SG_ BMS_nominalFullPackEnergy m0 : 16|16@1+ (0.02,0) [0|1310.7] "kWh" Receiver
+ SG_ BMS_nominalEnergyRemaining m0 : 32|16@1+ (0.02,0) [0|1310.7] "kWh" Receiver
+ SG_ BMS_idealEnergyRemaining m0 : 48|16@1+ (0.02,0) [0|1310.7] "kWh" Receiver
+ SG_ BMS_fullChargeComplete m1 : 15|1@1+ (1,0) [0|1] "" Receiver
+ SG_ BMS_energyBuffer m1 : 16|16@1+ (0.01,0) [0|655.35] "kWh" Receiver
+ SG_ BMS_expectedEnergyRemaining m1 : 32|16@1+ (0.02,0) [0|1310.7] "kWh" Receiver
+ SG_ BMS_energyToChargeComplete m1 : 48|16@1+ (0.02,0) [0|1310.7] "kWh" Receiver
 
 BO_ 893 ID37DCP_thermalStatus: 7 VehicleBus
  SG_ CP_acPinTemperature : 8|8@1+ (0.803922,-55) [-55|149.99] "C"  Receiver
